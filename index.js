@@ -14,9 +14,14 @@ function nextsequence(){
     $("."+color).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     playsound(color);
 }
+
 $("body").keydown(function(){
-    nextsequence();
+    if(level==0){
+        nextsequence();
+    }
 });
+
+
 $("button").click(function(event){
     var buttonid=event.target.id;
     clicksequence.push(buttonid);
@@ -61,5 +66,4 @@ function animatepress(value){
         $("#"+value).removeClass("pressed");
     },100);
 }
-
 
